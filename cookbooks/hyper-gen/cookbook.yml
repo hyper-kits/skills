@@ -1,0 +1,7 @@
+name: hyper-gen
+description: "Claude Code skill for using Hypergen recipes"
+version: 1.0.0
+defaults:
+  recipe: install
+recipes:
+  - "./*/recipe.yml"

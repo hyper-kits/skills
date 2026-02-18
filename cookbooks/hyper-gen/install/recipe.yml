@@ -1,0 +1,16 @@
+name: install
+description: "Install the hyper-generate skill to .claude/skills/"
+version: 1.0.0
+
+steps:
+  - name: Create skills directory
+    tool: ensure-dirs
+    paths: [".claude/skills/hyper-gen"]
+
+  - name: Install skill file
+    tool: template
+    template: templates/SKILL.md.jig
+    to: ".claude/skills/hyper-gen/SKILL.md"
+
+onSuccess: |
+  Skill installed to .claude/skills/hyper-gen/SKILL.md

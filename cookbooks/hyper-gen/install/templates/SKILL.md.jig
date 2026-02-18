@@ -1,0 +1,82 @@
+---
+name: hyper-generate
+description: Use when asked to create, scaffold, or add files for which a Hypergen recipe may exist - components, pages, API routes, CRUD, forms, tables, domain entities, project setup, npm packages, middleware, layouts, error boundaries, loading UI, server actions, or config setup
+---
+
+# Hyper Generate
+
+## Overview
+
+Before manually writing boilerplate, check if a Hypergen recipe exists. Recipes generate tested, consistent code faster than hand-writing.
+
+## When to Use
+
+**Trigger on requests to create/add/scaffold:**
+- React components, Next.js pages, layouts, loading/error UI
+- API routes, webhooks, GraphQL endpoints
+- Server actions, forms, data tables
+- CRUD workflows (list, detail, create, edit, delete)
+- Domain entities, value objects, repositories, services
+- Project setup, npm package config, ORM config
+- Middleware, shadcn/ui setup, TanStack Query setup
+
+**Don't use when:**
+- Modifying existing code (not scaffolding)
+- The request is highly custom with no recipe match
+- User explicitly says "don't use hypergen" or "write it manually"
+
+## Quick Reference
+
+### Available Kits and Recipes
+
+| Kit | Cookbook | Recipes |
+|-----|---------|---------|
+| `oss` | `project` | `setup`, `npm-pkg` |
+| `nextjs` | `project` | `create` |
+| `nextjs` | `page` | `add` |
+| `nextjs` | `route` | `add` |
+| `nextjs` | `component` | `add` |
+| `nextjs` | `layout` | `add` |
+| `nextjs` | `loading` | `add` |
+| `nextjs` | `error` | `add` |
+| `nextjs` | `middleware` | `add` |
+| `nextjs` | `action` | `basic`, `validated`, `revalidate` |
+| `nextjs` | `form` | `basic`, `rhf`, `server-action`, `crud` |
+| `nextjs` | `table` | `basic`, `server`, `sortable`, `filterable`, `crud` |
+| `nextjs` | `crud` | `resource`, `list-page`, `detail-page`, `create-page`, `edit-page`, `delete` |
+| `nextjs` | `domain` | `entity`, `value-object`, `enum`, `repository`, `service` |
+| `nextjs` | `config` | `all`, `shadcn`, `prisma`, `drizzle`, `tanstack-query` |
+| `nextjs` | `api` | `route`, `webhook`, `graphql` |
+
+### Command Pattern
+
+```bash
+hyper gen <kit> <cookbook> <recipe> [--var=value ...]
+```
+
+### Discovery Commands
+
+```bash
+# List installed kits
+hyper kit list
+
+# Show cookbook details and recipes
+hyper cookbook info [<kit>] <cookbook>
+
+# Show recipe details and variables
+hyper recipe info [<kit>] [<cookbook>] <recipe>
+```
+
+## Core Pattern
+
+1. **Identify** which recipe matches the request
+2. **Check variables** with `hyper cookbook info <cookbook>` or `hyper recipe info <recipe>`
+3. **Run the recipe** with appropriate variables
+4. **Customize** the generated output if the user needs modifications beyond what the recipe provides
+
+## Common Mistakes
+
+- Running a recipe without checking its required variables first
+- Not telling the user what was generated and where
+- Forgetting that `crud resource` is a meta-recipe that runs multiple sub-recipes
+- Not checking if the target kit is installed (`hyper kit list`)

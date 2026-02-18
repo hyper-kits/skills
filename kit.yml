@@ -1,0 +1,5 @@
+name: "@hyper-kits/skills"
+version: "1.0.0"
+description: "Installs Claude Code skills for Hypergen workflows"
+cookbooks:
+  - "./cookbooks/*/cookbook.yml"
