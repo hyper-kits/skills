@@ -9,8 +9,7 @@ steps:
 
   - name: Install skill file
     tool: template
-    template: templates/SKILL.md.jig
-    to: ".claude/skills/hyper-gen/SKILL.md"
+    template: templates/.claude/skills/hyper-gen/SKILL.md.jig
 
 onSuccess: |
   Skill installed to .claude/skills/hyper-gen/SKILL.md

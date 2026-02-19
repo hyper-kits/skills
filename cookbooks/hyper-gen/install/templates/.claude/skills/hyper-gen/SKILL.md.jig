@@ -27,26 +27,9 @@ Before manually writing boilerplate, check if a Hypergen recipe exists. Recipes 
 
 ## Quick Reference
 
-### Available Kits and Recipes
+### Discovering Available Recipes
 
-| Kit | Cookbook | Recipes |
-|-----|---------|---------|
-| `oss` | `project` | `setup`, `npm-pkg` |
-| `nextjs` | `project` | `create` |
-| `nextjs` | `page` | `add` |
-| `nextjs` | `route` | `add` |
-| `nextjs` | `component` | `add` |
-| `nextjs` | `layout` | `add` |
-| `nextjs` | `loading` | `add` |
-| `nextjs` | `error` | `add` |
-| `nextjs` | `middleware` | `add` |
-| `nextjs` | `action` | `basic`, `validated`, `revalidate` |
-| `nextjs` | `form` | `basic`, `rhf`, `server-action`, `crud` |
-| `nextjs` | `table` | `basic`, `server`, `sortable`, `filterable`, `crud` |
-| `nextjs` | `crud` | `resource`, `list-page`, `detail-page`, `create-page`, `edit-page`, `delete` |
-| `nextjs` | `domain` | `entity`, `value-object`, `enum`, `repository`, `service` |
-| `nextjs` | `config` | `all`, `shadcn`, `prisma`, `drizzle`, `tanstack-query` |
-| `nextjs` | `api` | `route`, `webhook`, `graphql` |
+Run `hyper recipe list` to see all available recipes across installed kits. This is the source of truth — recipes may be added or removed over time.
 
 ### Command Pattern
 
@@ -69,10 +52,11 @@ hyper recipe info [<kit>] [<cookbook>] <recipe>
 
 ## Core Pattern
 
-1. **Identify** which recipe matches the request
-2. **Check variables** with `hyper cookbook info <cookbook>` or `hyper recipe info <recipe>`
-3. **Run the recipe** with appropriate variables
-4. **Customize** the generated output if the user needs modifications beyond what the recipe provides
+1. **Discover** available recipes with `hyper recipe list`
+2. **Identify** which recipe matches the request
+3. **Check variables** with `hyper recipe info [<kit>] [<cookbook>] <recipe>`
+4. **Run the recipe** with appropriate variables
+5. **Customize** the generated output if the user needs modifications beyond what the recipe provides
 
 ## Common Mistakes
 
